@@ -61,5 +61,14 @@
 	]]>
 	</select>
 	
+	<!-- 회원가입 -->
+	<insert id="signUp" parameterType="com.gaji.jjmarket.member.model.domain.MemberVO">
+	<![CDATA[
+		insert into member
+		values(seq_member.NEXTVAL, #{memberId},#{memberPwd},#{memberName},
+		#{memberNickname},#{memberPhone},#{memberEmail},#{memberGender},#{memberScsnFl},
+		DEFAULT,DEFAULT)
+	]]>
+	</insert>
 	
 </mapper>

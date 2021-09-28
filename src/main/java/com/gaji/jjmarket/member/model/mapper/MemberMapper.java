@@ -14,4 +14,11 @@ public interface MemberMapper {
 	 */
 	public MemberVO loginAction(MemberVO inputMember);
 	
+	/** 회원가입 Mapper 
+	 * @param signUpMember
+	 * @return result 
+	 */
+	public int signUp(MemberVO signUpMember);
+	
+	
 }

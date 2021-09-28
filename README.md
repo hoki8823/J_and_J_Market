@@ -12,7 +12,7 @@
 * 개발 환경
   - O/S : Windows 10
   - Server : Apache-tomcat-9.0.52
-  - Java EE IDE : STS ( version 4.10.0.RELEASE )
+  - Java EE IDE : STS ( version 5.0.7.RELEASE )
   - Database : Oracle SQL Developer ( version 21.2.1.204 )
   - Programming Language : JAVA, HTML, CSS, JavaScript, JSP, SQL
   - Framework/flatform : Spring, mybatis, Bootstrap v5.1

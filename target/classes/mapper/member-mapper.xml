@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gaji.jjmarket.member.model.mapper.MemberMapper">
+
+	<!-- resultMap : 조회된 result set의 컬럼명과 VO의 필드명이 같지 않을 때 매핑 시키는 역할 -->
+	<resultMap type="com.gaji.jjmarket.member.model.domain.MemberVO" id="member_rm">
+
+		<!-- DB의 기본 키 -->
+		<id property="memberNo" column="MEM_NO" />
+
+		<!-- DB의 일반 컬럼들 -->
+		<result property="memberId" column="MEM_ID" />
+		<result property="memberPwd" column="MEM_PW" />
+		<result property="memberName" column="MEM_NM" />
+		<result property="memberNickname" column="NICKNAME" />
+		<result property="memberPhone" column="PHONE" />
+		<result property="memberEmail" column="EMAIL" />
+		<result property="memberGender" column="GENDER" />
+		<result property="memberScsnFl" column="SCSN_FL" /> <!-- 탈퇴 여부 -->
+		<result property="memberSignDt" column="SIGN_DT" /> <!-- 가입일 -->
+		<result property="memberGrade" column="MEM_GRADE" /> <!-- 등급 -->
+		<result property="address" column="ADDRESS" /> 
+
+	</resultMap>
+	
+	<resultMap type="com.gaji.jjmarket.member.model.domain.MemberVO" id="login_rm">
+
+		<!-- DB의 기본 키 -->
+		<id property="memberNo" column="MEM_NO" />
+
+		<!-- DB의 일반 컬럼들 -->
+		<result property="memberId" column="MEM_ID" />
+		<result property="memberPwd" column="MEM_PW" />
+		<result property="memberName" column="MEM_NM" />
+		<result property="memberNickname" column="NICKNAME" />
+		<result property="memberPhone" column="PHONE" />
+		<result property="memberEmail" column="EMAIL" />
+		<result property="memberGender" column="GENDER" />
+		<result property="memberScsnFl" column="SCSN_FL" /> <!-- 탈퇴 여부 -->
+		<result property="memberSignDt" column="SIGN_DT" /> <!-- 가입일 -->
+		<result property="memberGrade" column="MEM_GRADE" /> <!-- 등급 -->
+		<result property="address" column="ADDRESS" /> 
+
+	</resultMap>
+	
+	<!-- resultType과 resultMap은 동시에 사용할 수 없다. -->
+	<select id="getList" parameterType="com.gaji.jjmarket.member.model.domain.MemberVO" resultMap="member_rm">
+	<![CDATA[
+		select * from member
+	]]>
+	</select>
+	
+	<!-- 로그인 -->
+	<select id="loginAction" parameterType="com.gaji.jjmarket.member.model.domain.MemberVO" resultMap="login_rm">
+	<![CDATA[
+		select * from member
+		where mem_id = #{memberId}
+		and mem_pw = #{memberPwd}
+		and scsn_fl = 'Y'
+	]]>
+	</select>
+	
+	
+</mapper>

@@ -1,6 +1,7 @@
 package com.gaji.jjmarket.member.model.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.gaji.jjmarket.member.model.domain.MemberVO;
 import com.gaji.jjmarket.member.model.mapper.MemberMapper;
@@ -34,6 +35,21 @@ public class MemberServiceImpl implements MemberService{
 		}
 		
 		return loginMember;
+	}
+
+	// 회원가입 Service 구현
+	@Transactional(rollbackFor = Exception.class)
+	// SQLException : DB관련 오류가 났을 때 rollback을 하겠다.
+	// Exception : 아무 예외 발생시 rollback을 하겠다.
+	@Override
+	public int signUp(MemberVO signUpMember) {
+		// 암호화 추가 예정 ** spring-security-core 모듈
+		
+		String Pwd = signUpMember.getMemberPwd();
+		System.out.println(signUpMember.getMemberPwd());
+		signUpMember.setMemberPwd(Pwd);
+		
+		return mapper.signUp(signUpMember);
 	}
 
 }

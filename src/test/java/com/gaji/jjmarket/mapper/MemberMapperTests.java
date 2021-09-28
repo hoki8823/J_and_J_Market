@@ -20,19 +20,39 @@ public class MemberMapperTests {
 	@Setter(onMethod = @__({@Autowired }))
 	private MemberMapper mapper;
 	
-	
+	/*
 	@Test 
 	public void testGetList() {
 		mapper.getList().forEach(member -> log.info(member)); 
   	}
+	*/
 	
+	// 로그인 테스트
 	@Test
 	public void testLogin() {
 		MemberVO mem = new MemberVO();
 		mem.setMemberId("testid");
-		mem.setMemberPwd("testpw1");
+		mem.setMemberPwd("testpw");
 		//로그인에 실패할 경우 모든 정보 null값으로 가져와서 오류발생
 		log.info(mapper.loginAction(mem).getMemberId());
+	}
+	
+	// 회원가입 테스트
+	@Test
+	public void testSignUp() {
+		MemberVO mem = new MemberVO();
+		mem.setMemberId("abc");
+		mem.setMemberPwd("abc");
+		mem.setMemberName("abc");
+		mem.setMemberNickname("abc");
+		mem.setMemberEmail("abc@naver.com");
+		mem.setMemberPhone("01012345678");
+		mem.setMemberGender("M");
+		mem.setMemberScsnFl("Y");
+		
+		mapper.signUp(mem);
+		mapper.getList().forEach(member -> log.info(member)); 
+		
 	}
 	
 	

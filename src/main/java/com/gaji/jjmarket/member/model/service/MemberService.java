@@ -10,4 +10,10 @@ public interface MemberService {
 	 */
 	public abstract MemberVO loginAction(MemberVO inputMember);
 	
+	/** 회원가입 Service
+	 * @param signUpMember
+	 * @return result
+	 */
+	public abstract int signUp(MemberVO signUpMember);
+	
 }

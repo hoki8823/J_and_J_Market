@@ -20,13 +20,6 @@ public class MemberMapperTests {
 	@Setter(onMethod = @__({@Autowired }))
 	private MemberMapper mapper;
 	
-	/*
-	@Test 
-	public void testGetList() {
-		mapper.getList().forEach(member -> log.info(member)); 
-  	}
-	*/
-	
 	// 로그인 테스트
 	@Test
 	public void testLogin() {
@@ -38,6 +31,7 @@ public class MemberMapperTests {
 	}
 	
 	// 회원가입 테스트
+	/*
 	@Test
 	public void testSignUp() {
 		MemberVO mem = new MemberVO();
@@ -54,6 +48,17 @@ public class MemberMapperTests {
 		mapper.getList().forEach(member -> log.info(member)); 
 		
 	}
+	*/
 	
+	// 아이디 중복 체크 테스트
+	@Test
+	public void testIdDupCheck() {
+		log.info(mapper.idDupCheck("testid"));
+	}
 	
+	// 닉네임 중복 체크 테스트
+	@Test
+	public void testNnDupCheck() {
+		log.info(mapper.nnDupCheck("testnickname"));
+	}
 }

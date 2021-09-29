@@ -14,7 +14,7 @@ public class MemberServiceImpl implements MemberService{
 	
 	private final MemberMapper mapper;
 	
-	// 로그인 Service
+	// 로그인 Service 구현
 	@Override
 	public MemberVO loginAction(MemberVO inputMember) {
 		MemberVO loginMember = mapper.loginAction(inputMember);
@@ -36,7 +36,20 @@ public class MemberServiceImpl implements MemberService{
 		
 		return loginMember;
 	}
+	
+	// 아이디 중복 체크 Service 구현
+	@Override
+	public int idDupCheck(String memberId) {
+		return mapper.idDupCheck(memberId);
+	}
 
+	// 닉네임 중복 체크 Service 구현
+	@Override
+	public int nnDupCheck(String memberNickname) {
+		return mapper.nnDupCheck(memberNickname);
+	}
+
+	
 	// 회원가입 Service 구현
 	@Transactional(rollbackFor = Exception.class)
 	// SQLException : DB관련 오류가 났을 때 rollback을 하겠다.
@@ -51,5 +64,9 @@ public class MemberServiceImpl implements MemberService{
 		
 		return mapper.signUp(signUpMember);
 	}
+
+	
+	
+	
 
 }

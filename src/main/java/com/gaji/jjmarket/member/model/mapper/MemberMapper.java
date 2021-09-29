@@ -14,6 +14,18 @@ public interface MemberMapper {
 	 */
 	public MemberVO loginAction(MemberVO inputMember);
 	
+	/** 아이디 중복 체크 Mapper 
+	 * @param memberId
+	 * @return result
+	 */
+	public int idDupCheck(String memberId);
+	
+	/** 닉네임 중복 체크 Mapper 
+	 * @param memberNickname
+	 * @return result
+	 */
+	public int nnDupCheck(String memberNickname);
+	
 	/** 회원가입 Mapper 
 	 * @param signUpMember
 	 * @return result 

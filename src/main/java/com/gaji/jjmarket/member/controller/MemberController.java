@@ -12,17 +12,21 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.gaji.jjmarket.member.model.domain.MemberVO;
 import com.gaji.jjmarket.member.model.service.MemberService;
 
+import jdk.internal.org.jline.utils.Log;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j;
 
 @Controller
 @RequestMapping("/member/*")
 @RequiredArgsConstructor
+@SessionAttributes({"loginMember"})
 public class MemberController {
 
 	private final MemberService service;
@@ -40,11 +44,6 @@ public class MemberController {
 		
 		// inputMember -> memberId,memberPwd
 		System.out.println("inputMember : " + inputMember);
-		/*
-		 * Member [memberNo=0, memberId=user01, memberPwd=pass01, memberName=null,
-		 * memberPhone=null, memberEmail=null, memberAddress=null, memberInterest=null,
-		 * memberEnrollDate=null, memberStatus=null, memberGrade=null]
-		 */
 		
 		// 비지니스 로직 수행 후 결과 반환받기
 		MemberVO loginMember = service.loginAction(inputMember);
@@ -96,7 +95,7 @@ public class MemberController {
 	}
 	
 	// 로그아웃 Controller
-	@PostMapping("logout")
+	@GetMapping("logout")
 	public String logout(SessionStatus status) {
 		status.setComplete();
 		
@@ -118,6 +117,12 @@ public class MemberController {
 		int result = service.signUp(signUpMember);
 		
 		System.out.println(signUpMember);
+
+		if (result > 0) { // 성공
+			System.out.println("회원가입 성공");
+		} else { // 실패
+			System.out.println("회원가입 실패");
+		}
 
 		return "redirect:/"; // 메인화면으로 돌아가게 재요청
 	}

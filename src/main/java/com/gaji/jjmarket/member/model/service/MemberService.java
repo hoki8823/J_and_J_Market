@@ -1,8 +1,12 @@
 package com.gaji.jjmarket.member.model.service;
 
+import java.util.List;
+
 import com.gaji.jjmarket.member.model.domain.MemberVO;
 
 public interface MemberService {
+	
+	public List<MemberVO> getList();
 	
 	/** 로그인 Service 
 	 * @param inputMember

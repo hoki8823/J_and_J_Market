@@ -72,6 +72,15 @@
 		  <artifactId>orai18n</artifactId>
 		  <version>19.3.0.0</version>
 		</dependency>
+		
+		<!-- Spring Security 암호화기능만 사용-->
+		<dependency>
+		  <groupId>org.springframework.security</groupId>
+		  <artifactId>spring-security-core</artifactId>
+		  <version>${org.springframework-version}</version>
+		</dependency>
+		
+		
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>

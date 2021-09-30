@@ -21,6 +21,7 @@
 		-->
 		<param-value>
 			classpath:spring/root-context.xml
+			classpath:spring/security-context.xml
 		</param-value>	
 	</context-param>
 	

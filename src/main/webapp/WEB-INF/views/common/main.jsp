@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-main page 입니다.
+<jsp:include page="header.jsp" />
+
+
+<jsp:include page="footer.jsp" />
+
 </body>
 </html>

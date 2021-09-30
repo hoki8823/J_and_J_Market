@@ -44,14 +44,18 @@
 
 	</resultMap>
 	
-	<!-- resultType과 resultMap은 동시에 사용할 수 없다. -->
+	<select id="getList" parameterType="com.gaji.jjmarket.member.model.domain.MemberVO" resultMap="login_rm">
+	<![CDATA[
+		select * from member
+	]]>
+	</select>
 	
+	<!-- resultType과 resultMap은 동시에 사용할 수 없다. -->
 	<!-- 로그인 -->
 	<select id="loginAction" parameterType="com.gaji.jjmarket.member.model.domain.MemberVO" resultMap="login_rm">
 	<![CDATA[
 		select * from member
 		where mem_id = #{memberId}
-		and mem_pw = #{memberPwd}
 		and scsn_fl = 'Y'
 	]]>
 	</select>
@@ -79,7 +83,7 @@
 	<![CDATA[
 		insert into member
 		values(seq_member.NEXTVAL, #{memberId},#{memberPwd},#{memberName},
-		#{memberNickname},#{memberPhone},#{memberEmail},#{memberGender},#{memberScsnFl},
+		#{memberNickname},#{memberPhone},#{memberEmail},#{memberGender},DEFAULT,
 		DEFAULT,DEFAULT)
 	]]>
 	</insert>

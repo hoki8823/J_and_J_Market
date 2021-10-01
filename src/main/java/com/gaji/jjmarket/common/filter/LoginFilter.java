@@ -20,6 +20,7 @@ import javax.servlet.http.HttpSession;
 @WebFilter(urlPatterns = "/*")
 public class LoginFilter implements Filter {
 
+	public LoginFilter() {}
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		// TODO Auto-generated method stub
@@ -32,8 +33,8 @@ public class LoginFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		
 		// 로그인 되어있지 않아도 접근 가능한 경로 추가
-		// ALLOWED_PATH.add("/"); // 메인페이지
-		// ALLOWED_PATH.add("/resources/\\w"_); // 이미지,css,js 파일 등을 접근할 수 있는 경로 추가
+		//ALLOWED_PATH.add("/"); // 메인페이지
+		//ALLOWED_PATH.add("/resources/\\w"); // 이미지,css,js 파일 등을 접근할 수 있는 경로 추가
 		
 		// 회원 전용 페이지 중 비회원이 접근 가능한 페이지 경로 추가
 		ALLOWED_PATH.add("/member/login"); // 로그인 페이지 요청

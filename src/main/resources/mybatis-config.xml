@@ -14,8 +14,10 @@
 		<typeAlias type="com.gaji.jjmarket.member.model.domain.MemberVO" alias="MemberVO"/>
 		<typeAlias type="com.gaji.jjmarket.board.model.domain.BoardVO" alias="BoardVO"/>
 	</typeAliases>
+	<!--  
 	<mappers>
 		<mapper resource="/mappers/board-mapper.xml"/>
 		<mapper resource="/mappers/member-mapper.xml"/>
 	</mappers>
+	-->
 </configuration>

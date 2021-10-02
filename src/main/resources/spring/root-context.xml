@@ -29,9 +29,13 @@
      
     <!-- 마이바티스 SqlSession 등록하기 (xml 방식으로 bean 등록)-->
     <!-- SqlSessionFactoryBean: MyBatis 설정파일을 바탕으로 SqlSessionFactory를 생성한다. Spring Bean으로 등록해야 한다.-->
-	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="configLocation" value="classpath:mybatis-config.xml"/>
+		<property name="mapperLocations" value="classpath:mappers/**/*mapper.xml"/>
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
+	
+	<mybatis-spring:scan base-package="com.gaji.jjmarket.member.model.mapper"/>
+	<mybatis-spring:scan base-package="com.gaji.jjmarket.board.model.mapper"/>
 
 </beans>

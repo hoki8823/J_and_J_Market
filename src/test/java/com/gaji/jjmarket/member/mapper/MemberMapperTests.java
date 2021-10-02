@@ -1,4 +1,4 @@
-package com.gaji.jjmarket.mapper;
+package com.gaji.jjmarket.member.mapper;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

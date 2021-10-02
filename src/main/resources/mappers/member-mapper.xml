@@ -4,7 +4,7 @@
 <mapper namespace="com.gaji.jjmarket.member.model.mapper.MemberMapper">
 
 	<!-- resultMap : 조회된 result set의 컬럼명과 VO의 필드명이 같지 않을 때 매핑 시키는 역할 -->
-	<resultMap type="com.gaji.jjmarket.member.model.domain.MemberVO" id="member_rm">
+	<resultMap type="MemberVO" id="member_rm">
 
 		<!-- DB의 기본 키 -->
 		<id property="memberNo" column="MEM_NO" />
@@ -24,7 +24,7 @@
 
 	</resultMap>
 	
-	<resultMap type="com.gaji.jjmarket.member.model.domain.MemberVO" id="login_rm">
+	<resultMap type="MemberVO" id="login_rm">
 
 		<!-- DB의 기본 키 -->
 		<id property="memberNo" column="MEM_NO" />
@@ -44,7 +44,7 @@
 
 	</resultMap>
 	
-	<select id="getList" parameterType="com.gaji.jjmarket.member.model.domain.MemberVO" resultMap="login_rm">
+	<select id="getList" parameterType="MemberVO" resultMap="login_rm">
 	<![CDATA[
 		select * from member
 	]]>
@@ -52,7 +52,7 @@
 	
 	<!-- resultType과 resultMap은 동시에 사용할 수 없다. -->
 	<!-- 로그인 -->
-	<select id="loginAction" parameterType="com.gaji.jjmarket.member.model.domain.MemberVO" resultMap="login_rm">
+	<select id="loginAction" parameterType="MemberVO" resultMap="login_rm">
 	<![CDATA[
 		select * from member
 		where mem_id = #{memberId}
@@ -79,7 +79,7 @@
 	</select>
 	
 	<!-- 회원가입 -->
-	<insert id="signUp" parameterType="com.gaji.jjmarket.member.model.domain.MemberVO">
+	<insert id="signUp" parameterType="MemberVO">
 	<![CDATA[
 		insert into member
 		values(seq_member.NEXTVAL, #{memberId},#{memberPwd},#{memberName},

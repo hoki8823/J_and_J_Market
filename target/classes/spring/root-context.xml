@@ -20,10 +20,18 @@
 		<constructor-arg ref="hikariConfig"/>
 	</bean>
 	
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource"></property>
-		<property name="mapperLocations" value="classpath:mapper/**/*mapper.xml"></property>
+	<!-- 
+        SqlSession : sql구문을 DB에 전달, 실행하는 객체
+        SqlSessionFactory : SqlSession을 만드는 객체
+        sqlSessionFactoryBean : mybatis 설정 파일(mybatis-config.xml)과 Connection Pool 정보를 이용하여 SqlSessionFactory를 만드는 객체
+        sqlSessionTemplate : SqlSession 객체에 트랜잭션 처리 역할이 가능하도록 하는 객체
+     -->
+     
+    <!-- 마이바티스 SqlSession 등록하기 (xml 방식으로 bean 등록)-->
+    <!-- SqlSessionFactoryBean: MyBatis 설정파일을 바탕으로 SqlSessionFactory를 생성한다. Spring Bean으로 등록해야 한다.-->
+	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="configLocation" value="classpath:mybatis-config.xml"/>
+		<property name="dataSource" ref="dataSource"/>
 	</bean>
-				
-	<mybatis-spring:scan base-package="com.gaji.jjmarket.member.model.mapper"/>
+
 </beans>

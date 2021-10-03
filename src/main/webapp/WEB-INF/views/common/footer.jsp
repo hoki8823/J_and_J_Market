@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+푸터푸터
 </body>
 </html>

@@ -12,7 +12,7 @@ public class BoardVO {
 	private int boardNo;
 	private String boardTitle;
 	private String boardContent;
-	private Timestamp craeteDate;
+	private Timestamp createDate;
 	private String status;
 	private int readCount;
 	private int boardCode;

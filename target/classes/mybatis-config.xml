@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+		<!-- DB로 전달되는 값 중 null이 있으면 에러가 아닌 NULL 자체로 인식 -->
+	</settings>
+	
+	<!-- Mybatis3 typeAlias는 클래스단위, 패키지단위로 등록이 가능, 현재는 클래스단위 
+		사용이유는 단 하나, 개발자의 타이핑 할 내용이 줄어들기때문이다.-->
+	<typeAliases>
+		<typeAlias type="com.gaji.jjmarket.member.model.domain.MemberVO" alias="MemberVO"/>
+		<typeAlias type="com.gaji.jjmarket.board.model.domain.BoardVO" alias="BoardVO"/>
+	</typeAliases>
+	<!--  
+	<mappers>
+		<mapper resource="/mappers/board-mapper.xml"/>
+		<mapper resource="/mappers/member-mapper.xml"/>
+	</mappers>
+	-->
+</configuration>

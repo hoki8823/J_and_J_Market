@@ -20,7 +20,7 @@
 <ul class="navbar_menu">
     <li><a href="#">마이페이지</a></li>
     <li><a href="#">중고거래</a></li>
-    <li><a href="#">커뮤니티</a></li>
+    <li><a href="${contextPath }/board/list">커뮤니티</a></li>
     <li><a href="#">공지사항</a></li>
 </ul>
 <ul class="navbar_icons">

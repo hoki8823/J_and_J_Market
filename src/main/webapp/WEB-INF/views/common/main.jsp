@@ -14,7 +14,7 @@
 <jsp:include page="header.jsp" />
 
 <h3>상대는 메인이라구</h3>
-<h1>테스트</h1>
+
 <jsp:include page="footer.jsp" />
 </body>
 </html>

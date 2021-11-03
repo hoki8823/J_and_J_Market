@@ -33,6 +33,8 @@ a {
 }
 .navbar_menu li {
   padding: 0px 12px;
+}
+.navbar_menu a {
   color: var(--text-color);
 }
 .navbar_menu li:hover {
@@ -46,6 +48,8 @@ a {
 }
 .navbar_icons li {
   padding: 0px 8px;
+}
+.navbar_icons a {
   color: var(--text-color);
 }
 .navbar_icons i {

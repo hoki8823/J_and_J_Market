@@ -13,8 +13,53 @@
 </head>
 <body>
 <jsp:include page="header.jsp" />
-
-<h1>mainTest.html 들어갈 부분</h1>
+<!-- 페이지헤더 -->
+<header class="headerbar">
+    <h1 class="headerbar__title">J&J Market</h1>
+    <h2 class="headerbar__description">회원제 사이트 'J&J market'에 오신것을 환영합니다.</h2>
+</header>
+<!-- 거래게시판 -->
+<div class="tContainer">
+<h2 class="tboard__title">거래게시판</h2>
+<ul class="tboard">
+    <li class="tborard__item">
+        <a href="#">
+        <div class="sale">팝니다</div>
+        <div class="item__imgAndData">
+            <img src="imgs/item1.png" alt="거래품목사진1" class="item__img">
+            <span class="item__data">나이키 신발 사이즈 260 팝니다.</span>
+        </div>
+    </a>
+    </li>
+    <li class="tborard__item">
+        <a href="#">
+        <div class="buy">삽니다</div>
+        <div class="item__imgAndData">
+            <img src="imgs/item1.png" alt="거래품목사진1" class="item__img">
+            <span class="item__data">나이키 신발 사이즈 260 팝니다.</span>
+        </div>
+    </a>
+    </li>
+    <li class="tborard__item">
+        <a href="#">
+        <div class="sale">팝니다</div>
+        <div class="item__imgAndData">
+            <img src="imgs/item1.png" alt="거래품목사진1" class="item__img">
+            <span class="item__data">나이키 신발 사이즈 260 팝니다.</span>
+        </div>
+    </a>
+    </li>
+    <li class="tborard__item">
+        <a href="#">
+        <div class="buy">삽니다</div>
+        <div class="item__imgAndData">
+            <img src="imgs/item1.png" alt="거래품목사진1" class="item__img">
+            <span class="item__data">나이키 신발 사이즈 260 팝니다.</span>
+        </div>
+    </a>
+    </li>
+</ul>
+</div>
 
 <jsp:include page="footer.jsp" />
 </body>

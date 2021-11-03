@@ -15,7 +15,6 @@ body {
 }
 a {
   text-decoration: none;
-  color: var(--text-color);
   font-size: 12px;
 }
 .navbar_logo i {
@@ -25,6 +24,7 @@ a {
 .navbar_logo a {
   font-size: 20px;
   font-weight: bold;
+  color: var(--text-color);
 }
 .navbar_menu {
   list-style: none;
@@ -33,6 +33,7 @@ a {
 }
 .navbar_menu li {
   padding: 0px 12px;
+  color: var(--text-color);
 }
 .navbar_menu li:hover {
   background-color: darkorange;
@@ -45,6 +46,7 @@ a {
 }
 .navbar_icons li {
   padding: 0px 8px;
+  color: var(--text-color);
 }
 .navbar_icons i {
   position: relative;

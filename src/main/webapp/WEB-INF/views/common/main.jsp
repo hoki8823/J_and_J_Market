@@ -9,11 +9,12 @@
     <title>J&J Market</title>
     <script src="https://kit.fontawesome.com/83424fe51a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../../resources/css/style.css">
+    <script src="../../../resources/js/script.js" defer></script>
 </head>
 <body>
 <jsp:include page="header.jsp" />
 
-<h3>상대는 메인이라구</h3>
+<h1>mainTest.html 들어갈 부분</h1>
 
 <jsp:include page="footer.jsp" />
 </body>

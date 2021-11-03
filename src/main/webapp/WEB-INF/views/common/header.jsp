@@ -10,6 +10,8 @@
     <title>J&J Market</title>
     <script src="https://kit.fontawesome.com/83424fe51a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../../resources/css/style.css">
+	<script src="../../../resources/js/script.js" defer></script>
+
 </head>
 <body>
 <nav class="navbar">
@@ -51,6 +53,5 @@
 </a>
 </nav>
 
-    <script src="../../../resources/js/script.js"></script>
 </body>
 </html>

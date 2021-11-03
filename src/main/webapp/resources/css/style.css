@@ -6,6 +6,7 @@
 body {
   margin: 0;
 }
+/* -----------상단바CSS----------- */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -93,4 +94,75 @@ a {
   .navbar_icons.active {
     display: flex;
   }
+}
+/* 페이지헤더CSS */
+.headerbar {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  border: 5px solid orange;
+  border-radius: 4px;
+  box-sizing: content-box;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  align-items: center;
+  position: relative;
+  left: 14%;
+}
+.headerbar .headerbar__title {
+  font-size: 50px;
+  color: darkorange;
+}
+.headerbar .headerbar__description {
+  font-size: 15px;
+  color: orange;
+}
+/* ---------거래게시판CSS------------- */
+.tContainer {
+  margin: 50px;
+}
+.tboard {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  width: 30%;
+  height: 400px;
+  overflow-y: scroll;
+}
+.tboard__title {
+  font-size: 20px;
+  top: 0px;
+}
+.tboard .sale {
+  padding: 0 4px;
+  background-color: lightgreen;
+  display: inline-block;
+  border-radius: 4px;
+}
+.tboard .buy {
+  padding: 0 4px;
+  background-color: orange;
+  display: inline-block;
+  border-radius: 4px;
+}
+.tboard .tborard__item {
+  margin-bottom: 8px;
+}
+.tborard__item .item__imgAndData {
+  display: flex;
+  align-items: center;
+}
+.tborard__item .item__imgAndData .item__img {
+  width: 100px;
+}
+.tborard__item .item__imgAndData .item__data {
+  font-weight: bold;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.tborard__item a:hover {
+  color: darkorange;
 }

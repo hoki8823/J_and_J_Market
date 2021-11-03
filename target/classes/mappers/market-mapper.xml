@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.gaji.jjmarket.market.model.mapper.MarketMapper">
+
+  <resultMap type="MarketVO" id="market_rm">
+		<id property="marketNo" column="MARKET_NO" />
+ 
+		<result property="marketTitle" column="MARKET_TITLE" />
+		<result property="marketContent" column="MARKET_CONTENT" />
+		<result property="createDt" column="CREATE_DT" />
+		<result property="readCount" column="READ_COUNT" />
+		<result property="marketFl" column="MARKET_FL" />
+		<result property="price" column="PRICE" />
+		<result property="status" column="STATUS" />
+		<result property="deliveryCharge" column="DELIVERY_CHARGE" />
+		<result property="memNo" column="MEM_NO" />
+		<result property="categoryCd" column="CATEGORY_CD" />
+		<result property="transactionCategory" column="TRANSACTION_CATEGORY" />
+		<result property="transactionStatus" column="TRANSACTION_STATUS" />
+		<result property="nickname" column="NICKNAME" />
+		<result property="address" column="ADDRESS" />
+		<result property="categoryNm" column="CATEGORY_NM" />
+		<result property="likes" column="LIKES" />
+		<result property="itemCount" column="ITEMCOUNT" />
+		<result property="certifiedFl" column="CERTIFIED_FL" />
+		
+	</resultMap>
+  
+  <resultMap type="MarketAttachmentVO" id="attachment_rm">
+		<id property="fileNo" column="FILE_NO" />
+		
+		<result property="filePath" column="FILE_PATH" />
+		<result property="fileName" column="FILE_NAME" />
+		<result property="fileLevel" column="FILE_LEVEL" />
+		<result property="parentMarketNo" column="PARENT_MARKET_NO" />
+	</resultMap>
+  
+  	<!-- 전체 게시글 수 조회 -->
+	<select id="countMarket" resultType="_int">
+		SELECT COUNT(*) FROM MARKET
+		WHERE MARKET_FL = 'N'
+	</select>
+	
+	<!-- 페이징 처리 후 게시글 목록 조회 -->
+	<select id="selectList" parameterType="_int" resultMap="market_rm">
+		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM market
+						ORDER BY create_dt DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{start} AND #{end}
+	</select>
+	
+	
+</mapper>

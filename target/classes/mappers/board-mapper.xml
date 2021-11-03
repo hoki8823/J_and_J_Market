@@ -31,6 +31,19 @@
 	]]>
 	</select>
 	
+	<select id="getListWithPaging" parameterType="BoardVO" resultMap="board_rm">
+	<![CDATA[
+		select board_no,board_title,board_content,create_dt,status,read_count,board_cd,category_cd,mem_no from
+		(
+		select /*+INDEX_DESC(board,pk_board) */
+		rownum rn,board_no,board_title,board_content,create_dt,status,read_count,board_cd,category_cd,mem_no
+		from board
+		where rownum <= #{pageNum} * #{amount}
+		)
+		where rn > (#{pageNum} -1) * #{amount}
+	]]>
+	</select>
+	
 	<select id="getList" parameterType="_int" resultMap="board_rm">
 	<![CDATA[
 		select * from board

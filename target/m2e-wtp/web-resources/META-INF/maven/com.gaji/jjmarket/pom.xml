@@ -79,7 +79,12 @@
 		  <artifactId>spring-security-core</artifactId>
 		  <version>${org.springframework-version}</version>
 		</dependency>
-		
+		<!-- 파일 업로드 라이브러리 -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.4</version>
+		</dependency>
 		
 		<!-- Spring -->
 		<dependency>
@@ -183,8 +188,6 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-
-
 
 	</dependencies>
     <build>

@@ -1,5 +1,8 @@
 package com.gaji.jjmarket.member.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletResponse;
@@ -126,4 +129,6 @@ public class MemberController {
 
 		return "redirect:/"; // 메인화면으로 돌아가게 재요청
 	}
+	
+	
 }

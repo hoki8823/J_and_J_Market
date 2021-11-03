@@ -15,7 +15,6 @@ body {
 }
 a {
   text-decoration: none;
-  color: var(--text-color);
   font-size: 12px;
 }
 .navbar_logo i {

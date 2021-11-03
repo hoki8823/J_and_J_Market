@@ -12,14 +12,16 @@
     <link rel="stylesheet" href="../../../resources/css/style.css">
 </head>
 <body>
+
+
 <nav class="navbar">
 <div class="navbar_logo">
     <i class="fas fa-gift"></i>
-    <a href="#">J&J Market</a>
+    <a href="/">J&J Market</a>
 </div>
 <ul class="navbar_menu">
     <li><a href="#">마이페이지</a></li>
-    <li><a href="#">중고거래</a></li>
+    <li><a href="${contextPath }/market/list">중고거래</a></li>
     <li><a href="${contextPath }/board/list">커뮤니티</a></li>
     <li><a href="#">공지사항</a></li>
 </ul>
@@ -27,7 +29,8 @@
 	<c:choose>
 		<%-- 비로그인 --%>
 		<c:when test="${empty sessionScope.loginMember }">
-			<a href="${contextPath }/member/login">로그인</a>
+			<li><a href="${contextPath }/member/login">로그인</a></li>
+			<li><a href="${contextPath }/member/signUp">회원가입</a></li>
 		</c:when>
 		<%-- 회원로그인 --%>
 		<c:otherwise>

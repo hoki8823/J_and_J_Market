@@ -58,7 +58,7 @@
 		<c:forEach items="${mList }" var="list">
 			<tr>
 				<td>${list.marketNo}</td>
-				<td>${list.marketTitle}</td>
+				<td><a href="/market/${list.marketNo}">${list.marketTitle}</a></td>
 				<td><fmt:formatDate value="${list.createDt }" pattern="yyyy.MM.dd"/> </td>
 				<td>${list.itemCount }</td>
 			</tr>

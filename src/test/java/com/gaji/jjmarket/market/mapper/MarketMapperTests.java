@@ -20,7 +20,7 @@ public class MarketMapperTests {
 	
 	@Setter(onMethod_ = @Autowired)
 	private MarketMapper mapper;
-	
+	/*
 	@Test
 	public void countMarket() {
 		
@@ -30,4 +30,12 @@ public class MarketMapperTests {
 		
 		log.info(mapper.selectList(vo));
 	}
+	*/
+	@Test
+	public void selectAttachmentList() {
+		
+		log.info(mapper.selectAttachmentList(37));
+	}
+	
+	
 }

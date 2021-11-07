@@ -23,9 +23,7 @@ public class MarketVO {
 	private int itemCount;
 	private String nickname;
 	private String certifiedFl;
-	private String address;
 	private String categoryNm;
-	private int likes;
 
 	
 }

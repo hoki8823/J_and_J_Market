@@ -113,4 +113,41 @@
 			</foreach>
 			)A
 	</insert>
+	
+	<!-- 사고팔고 수정 -->
+	<update id="updateMarket" parameterType="MarketVO">
+		UPDATE MARKET SET
+		MARKET_TITLE = #{marketTitle},
+		MARKET_CONTENT = #{marketContent},
+		PRICE = #{price},
+		TRANSACTION_CATEGORY = #{transactionCategory},
+		STATUS = #{status},
+		CATEGORY_CD = #{categoryCd} 
+		WHERE MARKET_NO = #{marketNo}
+	</update>
+	
+	<!-- 이전 파일 레벨 수정 -->
+	<update id="updateOldFile" parameterType="MarketAttachmentVO">
+		UPDATE MARKET_FILE SET
+		FILE_LEVEL = #{fileLevel}
+		WHERE FILE_NO = #{fileNo}
+	</update>
+	
+	<!-- 삭제된 이전 파일 DB에서 삭제 -->
+	<delete id="deleteAttachmentList" parameterType="list">
+		DELETE FROM MARKET_FILE
+		WHERE FILE_NO IN
+		<foreach collection="list" item="at" open="(" close=")" separator=",">
+			#{at.fileNo}
+		</foreach>
+	
+	
+	</delete>
+	
+	<!--  게시글 삭제 -->
+	<update id="deleteMarket" parameterType="MarketVO">
+		UPDATE MARKET SET
+		MARKET_FL = 'Y'
+		WHERE MARKET_NO = '${marketNo}'
+	</update>
 </mapper>

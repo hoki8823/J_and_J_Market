@@ -60,4 +60,27 @@ public interface MarketMapper {
 	 */
 	public int insertAttachmentList(List<MarketAttachmentVO> uploadImages) ;
 	
+	/** 사고 팔고 글 부분 수정 DAO
+	 * @param market
+	 * @return result
+	 */
+	public int updateMarket(MarketVO market);
+	
+	/** 이전 파일의 레벨을 변경시키는 DAO
+	 * @param newAt
+	 * @return result
+	 */ 
+	public int updateOldFile(MarketAttachmentVO newAt);
+	
+	/** 삭제된 이전 파일 정보 삭제 DAO
+	 * @param removeFileList
+	 * @return result
+	 */
+	public int deleteAttachmentList(List<MarketAttachmentVO> removeFileList);
+	
+	/** 게시글 신고 DAO
+	 * @param market
+	 * @return result
+	 */
+	public int deleteMarket(MarketVO market);
 }

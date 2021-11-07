@@ -12,7 +12,6 @@
 <title>벙글장터 - 상세 조회</title>
 <link rel='stylesheet' href='https://sachinchoolur.github.io/lightslider/dist/css/lightslider.css'>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<link href="${contextPath}/resources/css/resume-styles.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
 <style>
@@ -278,7 +277,7 @@
 						
 			<!-- 이미지 출력 -->
             <c:if test="${!empty at}"> 
-            <div class="carousel slide boardImgArea" id="board-image">
+            <div class="carousel slide" id="board-image" data-ride="carousel">
                
                <!-- 출력되는 이미지 -->
                <div class="carousel-inner">
@@ -293,8 +292,8 @@
                </div> 
                
                <!-- 좌우 화살표 -->
-               <a class="carousel-control-prev" href="#board-image" data-slide="prev"><span class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a> 
-               <a class="carousel-control-next" href="#board-image" data-slide="next"><span class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>
+               <a class="carousel-control-prev" href="#board-image" data-slide="prev" role="button"><span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span></a> 
+               <a class="carousel-control-next" href="#board-image" data-slide="next" role="button"><span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span></a>
             </div>
             </c:if>
             
@@ -748,12 +747,7 @@
 		});
 	
 		
-		
-		// 신고하기
-		$(".report").on("click", function(){
-			window.name = "parentWindow";
-			 window.open('${contextPath}/market/marketReport/${market.marketNo}', "popup", "width=550, height=650, toolbars=no, scrollbars=no, menubar=no left=1000 top=200");
-		});
+
 
 		
 		

@@ -46,5 +46,19 @@ public interface MarketService {
 	 * @return result
 	 */
 	int insertMarket(MarketVO market, List<MultipartFile> images, String savePath);
+	
+	/** 사고 팔고 수정 Service
+	 * @param market
+	 * @param images
+	 * @param savePath
+	 * @param beforImages 
+	 * @return result
+	 */
+	int updateMarket(MarketVO market, List<MultipartFile> images, String savePath, int[] beforImages);
 
+	/** 게시글 삭제
+	 * @param market
+	 * @return result
+	 */
+	int deleteMarket(MarketVO market);
 }

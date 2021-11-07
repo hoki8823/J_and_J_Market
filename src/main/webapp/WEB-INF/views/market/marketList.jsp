@@ -64,6 +64,7 @@
 			</tr>
 		</c:forEach>
 	</table>
+	<a href="/market/insert">등록</a>
 	
 	<div style="display: block; text-align: center;">		
 		<c:if test="${paging.startPage != 1 }">

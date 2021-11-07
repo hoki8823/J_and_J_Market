@@ -128,4 +128,73 @@ public class MarketController {
 		
 		return url;
 	}
+	
+	// 게시글 수정 화면 전환 Controller
+	@RequestMapping("update/{marketNo}")
+	public String marketUpdate(@PathVariable("marketNo") int marketNo, Model model) {
+		
+		// 게시글 상세 조회 
+		MarketVO market = service.selectMarket(marketNo);
+		System.out.println(market);
+		
+		// 해당 게시글이 포함된 이미지 목록 조회
+		if(market != null) {
+			List<MarketAttachmentVO> attachmentList = service.selectAttachmentList(marketNo);
+			model.addAttribute("at", attachmentList);
+		}
+		
+		model.addAttribute("market", market);
+		return "market/marketUpdate";
+	}
+	
+	// 게시글 수정 화면 전환 Controller
+	@RequestMapping("updateAction/{marketNo}")
+	public String marketUpdateAction(@PathVariable("marketNo") int marketNo, Model model, RedirectAttributes ra,
+									@ModelAttribute MarketVO market, HttpServletRequest request,
+									@RequestParam(value="beforeImages", defaultValue="") int[] beforeImages,
+									@RequestParam(value="images", required=true) List<MultipartFile> images
+									) {
+		
+		// marketNo를 market에 세팅
+		market.setMarketNo(marketNo);
+		
+		// 실제 파일 저장 경로
+		String savePath = request.getSession().getServletContext().getRealPath("resources/marketImages");
+		
+		int result = service.updateMarket(market, images, savePath, beforeImages);
+		
+		
+		String url = null;
+		
+		if(result > 0) {
+
+			url = "redirect:../" + marketNo;
+			
+			request.getSession().setAttribute("returnListURL", "../list");
+		}else {
+			
+			url = "redirect:" + request.getHeader("referer");
+		}
+		
+		return url;
+	}
+	
+	// 게시글 삭제
+	@RequestMapping("delete/{marketNo}")
+	public String deleteMarket(@PathVariable("marketNo") int marketNo,
+							 @ModelAttribute MarketVO market,HttpServletRequest request, RedirectAttributes ra ) {
+		market.setMarketNo(marketNo);
+		
+		int result = service.deleteMarket(market);
+		
+		String url = null;
+		
+		if(result > 0) {
+			url = "redirect:../list";
+		} else {
+			url = "redirect:" + request.getHeader("referer");
+		}
+		
+		return url;
+	}
 }

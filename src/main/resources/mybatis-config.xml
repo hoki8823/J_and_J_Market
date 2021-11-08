@@ -13,11 +13,8 @@
 	<typeAliases>
 		<typeAlias type="com.gaji.jjmarket.member.model.domain.MemberVO" alias="MemberVO"/>
 		<typeAlias type="com.gaji.jjmarket.board.model.domain.BoardVO" alias="BoardVO"/>
+	  	<typeAlias type="com.gaji.jjmarket.market.model.domain.MarketVO" alias="MarketVO" />       
+	  	<typeAlias type="com.gaji.jjmarket.market.model.domain.MarketAttachmentVO" alias="MarketAttachmentVO" />
 	</typeAliases>
-	<!--  
-	<mappers>
-		<mapper resource="/mappers/board-mapper.xml"/>
-		<mapper resource="/mappers/member-mapper.xml"/>
-	</mappers>
-	-->
+	
 </configuration>

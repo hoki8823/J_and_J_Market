@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="../common/header.jsp"/>
 	<form action="loginAction" method="post" >
 		<h3>로그인</h3>
 		<input type="text" id="memberId" name="memberId" placeholder="아이디" value="${cookie.saveId.value }" required autofocus />
@@ -21,5 +22,6 @@
 		</label>
 		<button type="submit">login</button>
 	</form>
+<jsp:include page="../common/footer.jsp"/>
 </body>
 </html>
